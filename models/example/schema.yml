@@ -9,7 +9,7 @@ sources:
       tables:
         - name: TEST
           description: 'Test Table'
-      columns:
+          columns:
           - name: TEST_CODE
             description: "The primary key for this table"
             tests:
