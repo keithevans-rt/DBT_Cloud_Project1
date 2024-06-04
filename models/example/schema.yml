@@ -2,12 +2,12 @@
 version: 2
 
 sources:
-    - name: TEST_SRC
+    - name: KEVANS_SRC
       description: "Test Src Table"
       database: kevans_src
       schema: test
       tables:
-        - name: TEST
+        - name: TEST_SRC
           description: 'Test Table'
           columns:
           - name: TEST_CODE
