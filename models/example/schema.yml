@@ -15,9 +15,3 @@ sources:
             tests:
                 - unique
                 - not_null
-          - name: TEST_NAME
-            description: "The primary key for this table"
-          - name: TEST_DESC
-            description: "The primary key for this table"
-          - name: SEQ
-            description: "The primary key for this table"
