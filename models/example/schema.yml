@@ -6,6 +6,9 @@ sources:
       description: "Test Src Table"
       database: kevans_src
       schema: test
+      tables:
+        - name: TEST
+          description: 'Test Table'
       columns:
           - name: TEST_CODE
             description: "The primary key for this table"
