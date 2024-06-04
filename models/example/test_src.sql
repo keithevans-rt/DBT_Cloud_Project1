@@ -12,7 +12,7 @@
 with source_data as (
 
     select *
-    from {{ source('TEST_SRC','TEST')}}
+    from {{ source('KEVANS_SRC','TEST_SRC')}}
 
 )
 
