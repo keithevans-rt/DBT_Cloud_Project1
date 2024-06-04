@@ -6,6 +6,7 @@
           strategy='check',
           unique_key='test_code',
           check_cols=['test_desc', 'test_name','seq'],
+           invalidate_hard_deletes=True,
         )
     }}
 
