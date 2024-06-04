@@ -11,11 +11,8 @@
 
 with source_data as (
 
-    select 1 as id
-    union all
-    select null as id
-    union all
-    select 22 as id
+    select *
+    from {{ source('KEVANS_SRC','TEST_SRC')}}
 
 )
 
