@@ -11,7 +11,7 @@
 
 with source_data as (
 
-    select *
+    select *, '1'
     from {{ source('KEVANS_SRC','TEST_SRC')}}
 
 )
