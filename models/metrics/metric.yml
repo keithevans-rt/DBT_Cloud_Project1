@@ -1,0 +1,29 @@
+semantic_models:
+  - name: test
+    defaults:
+      agg_time_dimension: date_txt
+    description: |
+      Order fact table. This table’s grain is one row per order
+    model: ref('test_src')
+    entities:
+      - name: test_code
+        type: primary
+    dimensions:
+      - name: date_txt
+        type: time
+        type_params:
+          time_granularity: day
+    measures:
+      - name: test_count
+        description: The total amount for each order including taxes.
+        agg: sum
+        expr: count_int
+# Newly added          
+metrics: 
+  # Simple type metrics
+  - name: "test_count"
+    description: "Sum of orders value"
+    type: simple
+    label: "test_count"
+    type_params:
+      measure: test_count

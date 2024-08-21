@@ -11,7 +11,10 @@
 
 with source_data as (
 
-    select *, '1'
+    select *
+    , 1 Count_Int
+    , current_date() as Date_Txt
+
     from {{ source('KEVANS_SRC','TEST_SRC')}}
 
 )
