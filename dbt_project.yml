@@ -38,8 +38,28 @@ clean-targets:         # directories to be removed by `dbt clean`
 # continue to be built as views. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
+snapshots:
+  Keith_Test_Project:
+  +target_schema: 'SNAPSHOTS'
+  +target_database: "KEVANS_DBT_CLOUD{% if target.name in ('production', 'prod') %}_prod{% endif %}"   # Specify the default database for snapshots
+
+# Configuration setting for all models in project
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
+  Keith_Test_Project:
+    +transient: false
+    staging:
+      +schema: stage
+      +materialized: view
+    landing:
+      +schema: stage
+      +materialized: view
+    marts:
       +materialized: table
+      +schema: prod
+      +snowflake_warehouse: "bi_dbt_{% if target.name in ('production', 'prod') %}prod{% else %}dev{% endif %}_xl_wh"
+      +docs:
+        node_color: "black"
+
+vars:
+  # The `high date` variable will be accessible in all resources
+  high_date: '8888-12-31'
