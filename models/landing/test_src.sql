@@ -11,8 +11,8 @@
 
 with source_data as (
 
-    select *, '1'
-    from {{ source('KEVANS_SRC','TEST_SRC')}}
+    select *
+    from {{ source('KEVANS_SRC','HYBRID_TABLE')}}
 
 )
 
