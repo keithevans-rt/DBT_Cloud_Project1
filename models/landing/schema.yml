@@ -6,10 +6,10 @@ sources:
       database: KEVANS_TF_DEMO
       schema: PUBLIC
       tables:
-        - name: HYBRID_TABLE
+        - name: TF_STATE_TABLE
           description: 'Test Table'
           columns:
-          - name: ID
+          - name: STATE_CODE
             description: "The primary key for this table"
             tests:
                 - unique
