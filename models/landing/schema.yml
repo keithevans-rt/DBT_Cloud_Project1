@@ -14,3 +14,11 @@ sources:
             tests:
                 - unique
                 - not_null
+    - name: ZIP_TOWN
+      description: "Test Src Table"
+      database: US_ZIP_CODE_CROSSWALK_HUDUSPS
+      schema: ZIPCODE_CROSSWALK
+      tables:
+        - name: COUNTY_ZIP
+          description: 'Test Table'
+

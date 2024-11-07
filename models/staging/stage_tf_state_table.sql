@@ -3,12 +3,12 @@ with
                     select
                         *
                         ,nvl(dbt_valid_to,'{{ var('high_date' ) }}')                                   def_dbt_valid_to
-                    from {{ ref('snap_test_src') }}                                      src
+                    from   {{ ref('snap_tf_state_table') }}                                    src
     )
 
     ,flag_ as (
                     select
-                            id
+                            STATE_CODE
                             , MAX(def_dbt_valid_to)                                                        max_dbt_valid_to
                     from    source_
                     group by all
@@ -21,11 +21,11 @@ with
                             ,src.dbt_valid_to                                                       end_date
                             ,{{ current_flag ('src.def_dbt_valid_to','flag.max_dbt_valid_to')}}         current_flag
                             ,{{ delete_flag('flag.max_dbt_valid_to') }}                             delete_flag
-                            ,{{ version_number('src.id','src.def_dbt_valid_to') }}                      version_number
+                            ,{{ version_number('src.STATE_CODE','src.def_dbt_valid_to') }}                      version_number
 
                     from source_                                                                        src
                     inner join flag_                                                                    flag
-                            on src.id = flag.id
+                            on src.STATE_CODE = flag.STATE_CODE
                     )
 
 select *
