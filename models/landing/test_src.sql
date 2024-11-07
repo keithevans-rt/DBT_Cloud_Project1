@@ -12,10 +12,14 @@
 with source_data as (
 
     select *
+<<<<<<< HEAD:models/example/test_src.sql
     , 1 Count_Int
     , current_date() as Date_Txt
 
     from {{ source('KEVANS_SRC','TEST_SRC')}}
+=======
+    from {{ source('KEVANS_SRC','HYBRID_TABLE')}}
+>>>>>>> f2f72e828b9c5244f1f7d15b574a0995e3096378:models/landing/test_src.sql
 
 )
 

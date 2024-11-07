@@ -1,0 +1,6 @@
+
+version: 2
+
+models:
+    - name: test_src
+      description: "A starter dbt model"
