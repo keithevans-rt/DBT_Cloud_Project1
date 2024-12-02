@@ -6,11 +6,19 @@ sources:
       database: KEVANS_TF_DEMO
       schema: PUBLIC
       tables:
-        - name: HYBRID_TABLE
+        - name: TF_STATE_TABLE
           description: 'Test Table'
           columns:
-          - name: ID
+          - name: STATE_CODE
             description: "The primary key for this table"
             tests:
                 - unique
                 - not_null
+    - name: ZIP_TOWN
+      description: "Test Src Table"
+      database: US_ZIP_CODE_CROSSWALK_HUDUSPS
+      schema: ZIPCODE_CROSSWALK
+      tables:
+        - name: COUNTY_ZIP
+          description: 'Test Table'
+
